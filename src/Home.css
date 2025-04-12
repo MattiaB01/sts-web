@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+
+    width: 200px;
+    height: 600px;
+    background-color: bisque;
+    left: 20px;
+    top:50px;
+    display: block;
+    
+}
+
+.container2 {
+    position:relative;
+    width: 200px;
+    top:50px;
+    
+    height: 600px;
+    background-color: aqua;
+}
+
+.main {
+
+    display: flex;
+
+    
+}
