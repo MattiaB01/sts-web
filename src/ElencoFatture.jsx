@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Paper, Typography, AppBar, Toolbar, Container, CircularProgress, LinearProgress } from "@mui/material";
+import {Dialog, DialogTitle,DialogContent, DialogContentText,DialogActions, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Paper, Typography, AppBar, Toolbar, Container, CircularProgress, LinearProgress } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -9,6 +9,9 @@ import Button from '@mui/material/Button';
 import { useState } from "react";
 import axios from "axios";
 import proxy from "./proxy/proxy";
+
+import AlertDialog from "./Dialogs/Conferm";
+
 
 
 function ElencoFatture({ handleChange }) {
@@ -56,10 +59,26 @@ function ElencoFatture({ handleChange }) {
     handleChange("", 8, id);
   };
 
+
+  const [open, setOpen] = React.useState(true);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleDelete = async (id) => {
+
+    const conferma= confirm("Confermi l'eliminazione della fattura?")  
+    if (conferma){
+    console.log(a)
     console.log(`Elimina utente con ID: ${id}`);
     const response = await axios.post(`http://${proxy}:8080/eliminaFattura?id=${id}`)
     elencoFatture();
+    }
   };
 
   return (

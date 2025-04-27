@@ -180,6 +180,60 @@ const ModificaFattura = (id) => {
 
 
 
+  const inviaNuovo = async () => {
+    setEsito("")
+    setIsLoading(true)
+
+
+
+    if (aggiungi === false) {
+      setInvio(
+        prev => (
+          {
+            ...prev,
+            proprietario: {
+              ...prev.proprietario
+            },
+            //fattura:modifica,
+            fattura: {
+              ...prev.fattura,
+
+              natIva2: "",
+              bollo: "",
+            }
+          }
+        )
+      )
+    }
+    else {
+      setInvio((prev) => ({
+        ...prev,
+        proprietario: {
+          ...prev.proprietario
+        },
+        fattura: modifica,
+      }))
+    }
+
+    try {
+      const response = await axios.post(`http://${proxy}:8080/invioFattura`, invio);
+      setEsito(response.data)
+    }
+    catch (e) {
+      console.log("errore", e)
+    }
+    //alert('Operazione effettuata correttamente')
+    setIsLoading(false)
+
+
+
+
+
+
+  }
+
+
+
   const invia = async () => {
     setEsito("")
     setIsLoading(true)
@@ -231,8 +285,6 @@ const ModificaFattura = (id) => {
 
 
   }
-
-
 
 
 
@@ -760,15 +812,15 @@ const ModificaFattura = (id) => {
         </Grid2>
 
         <Grid2  >
-          <Button style={{ margin: 10 }} type="submit" variant="contained" color="success">
-            Salva
+          <Button style={{ margin: 10 }} type="button" onClick={inviaNuovo} variant="contained" color="primary">
+            Invia
           </Button>
-          <Button style={{ margin: 10 }} type="button" onClick={invia} variant="contained" color="warning">
+          <Button style={{ margin: 10 }} type="button" onClick={invia} variant="contained" color="primary">
             Modifica invio
           </Button>
-          <Button style={{ margin: 10 }} type="submit" variant="contained" color="primary">
+         {/* <Button style={{ margin: 10 }} type="reset" variant="contained" color="primary">
             Cancella
-          </Button>
+          </Button>*/}
 
 
         </Grid2>

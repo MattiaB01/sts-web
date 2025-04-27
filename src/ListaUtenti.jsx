@@ -42,10 +42,13 @@ function ListaUtenti  ({handleChange}) {
   };
 
   const handleDelete = async(id) => {
+
+    confirm ("Confermi l'eliminazione dell'utente selezionato?")
+    if( conferm) {
     console.log(`Elimina utente con ID: ${id}`);
     const response = await axios.post(`http://${proxy}:8080/eliminaUtente?id=${id}`);
-    alert(`Successo: Eliminazione effettuata correttamente`);
     lista();
+    }
   };
 
 useEffect(()=>{
@@ -67,7 +70,7 @@ useEffect(()=>{
   return (
     <>
      <Container maxWidth="lg" style={{
-      background: "#f8f8f8", padding: 20, borderRadius: 6,marginTop:-20,
+      background: "#f8f8f8", padding: 20, borderRadius: 6,marginTop:-20, height:540,
 
       boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
       boxShadow: " rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
@@ -79,7 +82,7 @@ useEffect(()=>{
           </Typography>
         </Toolbar>
       </AppBar>
-    <TableContainer component={Paper} style={{width:800,maxHeight:430}}>
+    <TableContainer component={Paper} style={{width:800,maxHeight:430 }}>
       <Table  size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>

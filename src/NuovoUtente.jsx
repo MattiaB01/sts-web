@@ -84,8 +84,9 @@ const NuovoUtente = () => {
           "email":formData.email,
        });
 
-      alert(`Successo: ${formData.nome}-${formData.cognome}-${formData.codiceFiscale}-${formData.città}\n${formData.cap}-${formData.indirizzo}-${formData.tel}-${formData.email}-${formData.provincia}`);
-    }
+    //  alert(`Successo: ${formData.nome}-${formData.cognome}-${formData.codiceFiscale}-${formData.città}\n${formData.cap}-${formData.indirizzo}-${formData.tel}-${formData.email}-${formData.provincia}`);
+       alert("Utente salvato.")
+  }
   };
 
   return (
@@ -142,10 +143,10 @@ const NuovoUtente = () => {
 
         </Grid2>
         <Grid2 item xs={12} >
-          <Button style={{ margin: 30 }} type="submit" variant="contained" color="success">
+          <Button style={{margin: 10 ,marginTop:30}}  type="submit" variant="contained" color="primary">
             Salva
           </Button>
-          <Button style={{ margin: 10 }} type="reset" variant="contained" color="primary">
+          <Button style={{ margin: 10,marginTop:30 }} type="reset" variant="contained" color="primary">
             Cancella
           </Button>
         </Grid2>

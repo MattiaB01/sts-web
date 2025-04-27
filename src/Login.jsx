@@ -11,6 +11,8 @@ import logo from "./assets/STS_Logo.jpeg";
 
 import proxy from "./proxy/proxy.jsx";
 
+import Recupera from './RecuperaPsw.jsx';
+
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -20,6 +22,10 @@ function Login() {
 
   const handleReg = () => {
     navigate("/registrati");
+
+  }
+  const handleRecupera = () => {
+    navigate("/recupera");
 
   }
 
@@ -62,7 +68,7 @@ function Login() {
     setLoading(false);
   };
 
- 
+
 
   return (
     <>
@@ -74,10 +80,10 @@ function Login() {
 
             boxShadow: " rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
 
-            marginTop:20,
+            marginTop: 20,
           }} />
         </div>
-        {loading ? <Typography variant="h6"style={{ margin: 12 }}> <CircularProgress /> </Typography> :
+        {loading ? <Typography variant="h6" style={{ margin: 12 }}> <CircularProgress /> </Typography> :
           <Typography variant="h6" style={{ margin: 20 }}>
             Login
           </Typography>}
@@ -114,7 +120,7 @@ function Login() {
       <Typography
 
 
-        style={{fontSize:12, margin: 10, color: "white", cursor: "pointer" }}> <span onClick={handleReg}>Recupera password</span> </Typography>
+        style={{ fontSize: 12, margin: 10, color: "white", cursor: "pointer" }}> <span onClick={handleRecupera}>Recupera password</span> </Typography>
     </>
 
   )

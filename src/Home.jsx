@@ -27,6 +27,8 @@ import Modal from '@mui/material/Modal';
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { Padding } from '@mui/icons-material';
+
+import AlertDialog from './Dialogs/Conferm';
 const style = {
   
   position: 'absolute',
@@ -113,6 +115,10 @@ export default function Home() {
     setValue(newValue,id);
     setId(id);
     console.log("id",id)
+
+    if (event) {
+      <AlertDialog/>
+    }
   };
 
   return (

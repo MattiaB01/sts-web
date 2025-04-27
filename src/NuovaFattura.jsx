@@ -179,7 +179,10 @@ const NuovaFattura = () => {
     }
     try {
       const response = await axios.post(`http://${proxy}:8080/salvaFattura`, invio);
-      setEsito(response.data)
+      if(response.data==="ok")
+       {setEsito("Fattura salvata")}
+      else 
+      {setEsito("Errore. Controlla i dati inseriti")}
     }
     catch {
 
@@ -774,15 +777,15 @@ const NuovaFattura = () => {
         </Grid2>
 
         <Grid2  >
-          <Button style={{ margin: 10 }} type="button" onClick={salvaFattura} variant="contained" color="success">
+          <Button style={{ margin: 10 }} type="button" onClick={salvaFattura} variant="contained" color="primary">
             Salva
           </Button>
-          <Button style={{ margin: 10 }} type="button" onClick={invia} variant="contained" color="warning">
+          <Button style={{ margin: 10 }} type="button" onClick={invia} variant="contained" color="primary">
             Invia
           </Button>
-          <Button style={{ margin: 10 }} type="button" variant="contained" color="primary">
+          {/*<Button style={{ margin: 10 }} type="button" variant="contained" color="primary">
             Cancella
-          </Button>
+          </Button> */}
 
 
         </Grid2>

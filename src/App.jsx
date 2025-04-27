@@ -10,7 +10,9 @@ import '@fontsource/roboto/700.css';
 
 import { useState } from "react";
 import Registrazione from "./Registrazione";
+import Recupera from "./RecuperaPsw";
 import { Switch } from "@mui/material";
+
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -35,6 +37,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/registrati" element={<Registrazione />} />
+        <Route path="/recupera" element={<Recupera />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />
 
