@@ -9,8 +9,8 @@ import Divider from '@mui/material/Divider';
 import ListaUtenti from './ListaUtenti';
 import { CssBaseline, createTheme, ThemeProvider } from '@mui/material';
 import Logo from './Logo';
-import DatiProprietario from './Datiproprietario';
-import ElencoUtenti from "./ElencoUtenti";
+import DatiProprietario from './DatiProprietario';
+//import ElencoUtenti from "./ElencoUtenti";
 import NuovaFattura from './NuovaFattura';
 
 import BlurCircularIcon from '@mui/icons-material/BlurCircular';
@@ -28,7 +28,6 @@ import Modal from '@mui/material/Modal';
 import { Navigate, useNavigate } from "react-router-dom";
 import { Padding } from '@mui/icons-material';
 
-import AlertDialog from './Dialogs/Conferm';
 const style = {
   
   position: 'absolute',

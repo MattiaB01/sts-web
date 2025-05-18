@@ -10,20 +10,6 @@ import axios from "axios";
 import proxy from "./proxy/proxy";
 
 
-/*const users = [
-  { id: 1, nome: "Mario", cognome: "Rossi", codiceFiscale: "RSSMRA80A01H501Z" },
-  { id: 2, nome: "Luca", cognome: "Bianchi", codiceFiscale: "BNCLCU85B02F205X" },
-  { id: 3, nome: "Giulia", cognome: "Verdi", codiceFiscale: "VRDGLL90C03D704Y" },
-  { id: 4, nome: "Sara", cognome: "Neri", codiceFiscale: "NRESRA95D04A001W" },
-  { id: 1, nome: "Mario", cognome: "Rossi", codiceFiscale: "RSSMRA80A01H501Z" },
-  { id: 2, nome: "Luca", cognome: "Bianchi", codiceFiscale: "BNCLCU85B02F205X" },
-  { id: 3, nome: "Giulia", cognome: "Verdi", codiceFiscale: "VRDGLL90C03D704Y" },
-  { id: 4, nome: "Sara", cognome: "Neri", codiceFiscale: "NRESRA95D04A001W" },
-  { id: 1, nome: "Mario", cognome: "Rossi", codiceFiscale: "RSSMRA80A01H501Z" },
-  { id: 2, nome: "Luca", cognome: "Bianchi", codiceFiscale: "BNCLCU85B02F205X" },
-  { id: 3, nome: "Giulia", cognome: "Verdi", codiceFiscale: "VRDGLL90C03D704Y" },
-  { id: 4, nome: "Sara", cognome: "Neri", codiceFiscale: "NRESRA95D04A001W" },
-];*/
 
 
 
@@ -72,7 +58,7 @@ useEffect(()=>{
      <Container maxWidth="lg" style={{
       background: "#f8f8f8", padding: 20, borderRadius: 6,marginTop:-20, height:540,
 
-      boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
+     // boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
       boxShadow: " rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
     }}>
     <AppBar position="static" style={{alignItems:'center',marginBottom:20}}>

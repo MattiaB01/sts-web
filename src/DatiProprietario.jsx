@@ -142,7 +142,7 @@ const DatiProprietario = () => {
          
         </Grid>
         <Grid item xs={12} >
-            <Button style={{margin:30}}  type="submit"  variant="contained" color="success"> 
+            <Button style={{margin:30}}  type="submit"  variant="contained" color="primary"> 
               Salva
             </Button>
             <Button style={{margin:10}} type="reset" onClick={handleReset} variant="contained" color="primary"> 

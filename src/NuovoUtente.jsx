@@ -93,7 +93,7 @@ const NuovoUtente = () => {
     <Container maxWidth="sm" style={{
       background: "#f8f8f8", padding: 20, borderRadius: 6,marginTop:-20,
 
-      boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
+     // boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
       boxShadow: " rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
     }}>
       <AppBar position="static" style={{ alignItems: 'center', marginBottom: 20 }}>
