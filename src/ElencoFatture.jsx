@@ -45,12 +45,17 @@ function ElencoFatture({ handleChange }) {
   }
 
   const elencoFattureData = async () => {
+
+    if((!daData)||(!aData)) {
+      alert("Controlla le date")
+    }
+    else {
     setIsLoading(true)
     const response = await axios.post(`http://${proxy}:8080/elencoFattureData?username=${username}&start=${daData}&end=${aData}`)
     setElenco(response.data.fatture)
     console.log(response.data.fatture)
     setIsLoading(false)
-
+    }
   }
 
 

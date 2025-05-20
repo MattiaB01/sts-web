@@ -3,7 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 //import M from 'materialize-css':
 import Button from '@mui/material/Button';
-import { TextField, Box, Typography,Checkbox } from '@mui/material';
+import {
+  TextField, Box, Typography, Checkbox,
+  Dialog, DialogContent, DialogContentText, DialogTitle,
+} from '@mui/material';
 import Modal from '@mui/material/Modal';
 import axios from 'axios';
 //import './App.css';
@@ -12,6 +15,20 @@ import logo from "./assets/STS_Logo.jpeg";
 
 import proxy from "./proxy/proxy.jsx";
 function Registrazione() {
+
+  const [mex, setMex] = useState("Registrazione effettuata correttamante.")
+
+  const [open2, setOpen2] = useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
+
+
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState({})
@@ -19,30 +36,31 @@ function Registrazione() {
 
   const validate = () => {
     let tempErrors = {};
-    if (password != conferma){
+    if (password != conferma) {
 
-     tempErrors.password = "Le password non coincidono";
-     setErrors(tempErrors);
-    return false;
+      tempErrors.password = "Le password non coincidono";
+      setErrors(tempErrors);
+      return false;
     }
 
-    else{ tempErrors.password = '';
-    /*if (!/^[A-Z0-9]{16}$/.test(formData.codiceFiscale))
-      tempErrors.codiceFiscale = "Codice Fiscale non valido";
-    if (formData.password.length < 6)
-      tempErrors.password = "La password deve avere almeno 6 caratteri";
-    if (!/^\d{4,6}$/.test(formData.pincode))
-      tempErrors.pincode = "PIN Code deve essere di 4-6 cifre";
-    if (!/^\d{11}$/.test(formData.partitaIva))
-      tempErrors.partitaIva = "Partita IVA deve essere di 11 cifre";*/
-    console.log("in validate - errore" + tempErrors.password)
-    console.log(password)
-    console.log(conferma)
-    setErrors(tempErrors);
-    console.log(errors.password)
-    //return Object.keys(tempErrors).length === 0;
+    else {
+      tempErrors.password = '';
+      /*if (!/^[A-Z0-9]{16}$/.test(formData.codiceFiscale))
+        tempErrors.codiceFiscale = "Codice Fiscale non valido";
+      if (formData.password.length < 6)
+        tempErrors.password = "La password deve avere almeno 6 caratteri";
+      if (!/^\d{4,6}$/.test(formData.pincode))
+        tempErrors.pincode = "PIN Code deve essere di 4-6 cifre";
+      if (!/^\d{11}$/.test(formData.partitaIva))
+        tempErrors.partitaIva = "Partita IVA deve essere di 11 cifre";*/
+      console.log("in validate - errore" + tempErrors.password)
+      console.log(password)
+      console.log(conferma)
+      setErrors(tempErrors);
+      console.log(errors.password)
+      //return Object.keys(tempErrors).length === 0;
       return true;
-  }
+    }
   };
 
 
@@ -69,10 +87,20 @@ function Registrazione() {
         if (response.data != "errore") {
           //const data = await response.json();
           //localStorage.setItem("authToken", response.data); // Salva il token
-          alert("Registrazione effettuata correttamente");
-          navigate("/");
+
+
+          // alert("Registrazione effettuata correttamente");
+          setOpen2(true)
+          setMex("Registrazione effettuata correttamente.")
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
+
+         
         } else {
-          alert("Username esistente");
+          //("Username esistente");
+          setOpen2(true)
+          setMex("Username esistente.")
         }
 
 
@@ -85,7 +113,7 @@ function Registrazione() {
         console.error('errore in response ' + err);
       }
     }
-  
+
   };
 
   const [username, setUsername] = useState('');
@@ -117,7 +145,7 @@ function Registrazione() {
   return (
     <>
       <div>
-      
+
         <Modal
           open={open}
           onClose={handleClose}
@@ -126,20 +154,20 @@ function Registrazione() {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="p" component="h2">
-            Termini di servizio
-              
+              Termini di servizio
+
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{ fontSize: 10 }}>
-              Questa applicazione è fornita gratuitamente per facilitare l'invio dei dati delle fatture sanitarie tramite API al Sistema Tessera Sanitaria dell'Agenzia delle Entrate. <br/>
+              Questa applicazione è fornita gratuitamente per facilitare l'invio dei dati delle fatture sanitarie tramite API al Sistema Tessera Sanitaria dell'Agenzia delle Entrate. <br />
 
-              L’utilizzo dell’app avviene sotto la piena responsabilità dell’utente finale. {/* L'autore non garantisce che l’applicazione sia priva di errori o che soddisfi pienamente gli obblighi di legge in merito all'invio dei dati fiscali. */} 
+              L’utilizzo dell’app avviene sotto la piena responsabilità dell’utente finale. {/* L'autore non garantisce che l’applicazione sia priva di errori o che soddisfi pienamente gli obblighi di legge in merito all'invio dei dati fiscali. */}
               L’autore declina ogni responsabilità per malfunzionamenti, errori nei dati trasmessi o danni derivanti dall’utilizzo del software.
-              <br/><br/>
-               <b>Trattamento dei Dati personali {/*GDPR*/}</b>
-               <br/>
+              <br /><br />
+              <b>Trattamento dei Dati personali {/*GDPR*/}</b>
+              <br />
               I dati inseriti (anagrafici e fiscali) vengono memorizzati in un database locale {/*ospitato su un Raspberry Pi,*/} gestito direttamente dall’applicazione. Nessun dato viene trasmesso a terzi.
 
-              L’utente ha la possibilità di cancellare {/*singolarmente*/} i propri dati tramite l’interfaccia dell’applicazione. 
+              L’utente ha la possibilità di cancellare {/*singolarmente*/} i propri dati tramite l’interfaccia dell’applicazione.
               {/* A breve sarà disponibile una funzione per esportare tutti i propri dati personali in formato leggibile.*/}
 
               {/*Nonostante siano adottate misure tecniche basilari per la protezione dei dati, l’autore non può garantire la totale sicurezza né la piena conformità con la normativa GDPR. Pertanto */}
@@ -153,7 +181,7 @@ function Registrazione() {
 
 
 
-      <div className="login-card" style={{ width: 300, margin: 'auto', marginTop:-15, padding: 10, borderRadius: 10 }} >
+      <div className="login-card" style={{ width: 300, margin: 'auto', marginTop: -15, padding: 10, borderRadius: 10 }} >
         <div style={{ color: "blueviolet" }}>
           <img src={logo} alt="Logo" width="230" height="230" style={{
             color: "black", borderRadius: "50%",
@@ -197,7 +225,7 @@ function Registrazione() {
             </Box>
 
 
-            <Checkbox required  />  <Button  style={{fontSize:10, marginLeft:-10}} onClick={handleOpen}>Accetta termini di servizio</Button>
+            <Checkbox required />  <Button style={{ fontSize: 10, marginLeft: -10 }} onClick={handleOpen}>Accetta termini di servizio</Button>
             <div className="center-align">
               <Button type="submit" style={{ margin: 5 }} className="btn waves-effect waves-light" variant="contained" >Registrati</Button>
 
@@ -211,6 +239,23 @@ function Registrazione() {
 
         style={{ margin: 10, color: "white", cursor: "pointer" }}><span onClick={handleLogin}>Login</span> </Typography>
 
+
+      <Dialog
+        open={open2}
+        onClose={handleClose2}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Registrazione"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {mex}
+          </DialogContentText>
+        </DialogContent>
+
+      </Dialog>
     </>
   )
 }

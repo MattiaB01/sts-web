@@ -27,9 +27,10 @@ import Modal from '@mui/material/Modal';
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { Padding } from '@mui/icons-material';
+import DatiAccount from './DatiAccount';
 
 const style = {
-  
+
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -91,11 +92,11 @@ function a11yProps(index) {
 }
 
 export default function Home() {
-  
 
-  const username= localStorage.getItem('authToken').toUpperCase();
- 
-  const [id,setId] = React.useState();
+
+  const username = localStorage.getItem('authToken').toUpperCase();
+
+  const [id, setId] = React.useState();
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -110,26 +111,29 @@ export default function Home() {
 
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue,id) => {
-    setValue(newValue,id);
+  const handleChange = (event, newValue, id) => {
+    setValue(newValue, id);
     setId(id);
-    console.log("id",id)
+    console.log("id", id)
 
+    /*
     if (event) {
       <AlertDialog/>
     }
+      */
   };
 
   return (
     < >
-    <div style={{minWidth:1480,marginLeft:-100,marginTop:-10,background:"#eeeeee",borderRadius:6, maxHeight:695,
-      
-      boxShadow: '0px 0px 55px -5px rgba(0,0,0,0.82)',
-    }}>
-      
-      <div>
-  
-       {/* <Button onClick={handleOpen}>Open modal</Button>
+      <div style={{
+        minWidth: 1480, marginLeft: -100, marginTop: -10, background: "#eeeeee", borderRadius: 6, maxHeight: 695,
+
+        boxShadow: '0px 0px 55px -5px rgba(0,0,0,0.82)',
+      }}>
+
+        <div>
+
+          {/* <Button onClick={handleOpen}>Open modal</Button>
         <Modal
           open={open}
           onClose={handleClose}
@@ -145,69 +149,74 @@ export default function Home() {
             </Typography>
           </Box>
         </Modal> */}
-      </div>
-    <Typography style={{textAlign:"start",marginLeft:50, color:"#004a98",padding:10}}> Ciao {username} </Typography>
-      <Box
-        sx={{ flexGrow: 1, /*bgcolor: 'background.paper'*/ display: 'flex', height:580, paddingRight:5, paddingLeft:5, paddingBottom:3 }}
-      
-      >
-        
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Vertical tabs example"
-          sx={{ borderRight: 1, borderColor: 'divider' }}
+        </div>
+        <Typography style={{ textAlign: "start", marginLeft: 50, color: "#004a98", padding: 10 }}> Ciao {username} </Typography>
+        <Box
+          sx={{ flexGrow: 1, /*bgcolor: 'background.paper'*/ display: 'flex', height: 580, paddingRight: 5, paddingLeft: 5, paddingBottom: 3 }}
+
         >
-          <Tab icon={<BlurCircularIcon />} iconPosition='start' label="Home" {...a11yProps(0)} />
 
-          <Tab label="I tuoi dati" {...a11yProps(1)} />
-          <Tab label="" icon={<Divider />} disabled />
-          <Tab label="Nuovo utente" {...a11yProps(3)} />
-          <Tab label="Elenco utenti" {...a11yProps(4)} />
-          {value === 5 && <Tab label="Modifica" {...a11yProps(5)} />}
-          {value != 5 && <Tab icon={<Divider />} disabled />}
-          <Tab label="Nuova Fattura" {...a11yProps(6)} />
-          <Tab label="Elenco Fatture" {...a11yProps(7)} />
-          {value === 8 && <Tab label="Modifica" {...a11yProps(8)} />}
-          {value != 8 && <Tab icon={<Divider />} disabled />}
-          {/*<Tab label="ESCI" {...a11yProps(9)} />*/}
+          <Tabs
 
-        </Tabs>
-        <TabPanel value={value} index={0}>
-          <Logo />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <DatiProprietario />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <NuovoUtente />
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          <ListaUtenti handleChange={handleChange} />
-        </TabPanel>
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            sx={{ borderRight: 1, borderColor: 'divider' }}
+          >
+            <Tab icon={<BlurCircularIcon />} iconPosition='start' label="Home" {...a11yProps(0)} />
 
-        <TabPanel value={value} index={5}>
-          <ModificaUtente id={id}/>
-        </TabPanel>
-        <TabPanel value={value} index={6}>
-          <NuovaFattura />
-        </TabPanel>
-        <TabPanel value={value} index={7}>
-          <ElencoFatture handleChange={handleChange} />
-        </TabPanel>
-        <TabPanel value={value} index={8}>
-          <ModificaFattura id={id}/>
-        </TabPanel>
-     
+            <Tab label="I tuoi dati" {...a11yProps(1)} />
+            <Tab label="" icon={<Divider />} disabled />
+            <Tab label="Nuovo utente" {...a11yProps(3)} />
+            <Tab label="Elenco utenti" {...a11yProps(4)} />
+            {value === 5 && <Tab label="Modifica" {...a11yProps(5)} />}
+            {value != 5 && <Tab icon={<Divider />} disabled />}
+            <Tab label="Nuova Fattura" {...a11yProps(6)} />
+            <Tab label="Elenco Fatture" {...a11yProps(7)} />
+            {value === 8 && <Tab label="Modifica" {...a11yProps(8)} />}
+            {value != 8 && <Tab icon={<Divider />} disabled />}
+            <Tab label="" icon={<Divider />} disabled />
+            <Tab label="Il tuo account" {...a11yProps(10)} />
+            {/*<Tab label="ESCI" {...a11yProps(9)} />*/}
 
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "start", position: "relative", bottom: 20, marginLeft: "3%" }}>
-        <Button variant="contained" onClick={logout2}> Esci </Button>
-      </Box>
+          </Tabs>
+          <TabPanel value={value} index={0}>
+            <Logo />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <DatiProprietario />
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <NuovoUtente />
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <ListaUtenti handleChange={handleChange} />
+          </TabPanel>
+
+          <TabPanel value={value} index={5}>
+            <ModificaUtente id={id} />
+          </TabPanel>
+          <TabPanel value={value} index={6}>
+            <NuovaFattura />
+          </TabPanel>
+          <TabPanel value={value} index={7}>
+            <ElencoFatture handleChange={handleChange} />
+          </TabPanel>
+          <TabPanel value={value} index={8}>
+            <ModificaFattura id={id} />
+          </TabPanel>
+          <TabPanel value={value} index={10}>
+            <DatiAccount />
+          </TabPanel>
+
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "start", position: "relative", bottom: 20, marginLeft: "3%" }}>
+          <Button variant="contained" onClick={logout2}> Esci </Button>
+        </Box>
       </div>
     </>
- 
+
   );
 }
