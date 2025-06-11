@@ -11,6 +11,6 @@ export default {
   preview: {
     host: true,
     port: 4173,
-    allowedHosts: ['mattia.iliadboxos.it']
+    allowedHosts: ['inviosts.mattiabonfanti.it']
   }
 }

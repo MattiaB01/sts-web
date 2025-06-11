@@ -13,10 +13,12 @@ RUN npm i -g serve
 
 COPY . .
 
+RUN npm rebuild esbuild
+
 RUN npm run build
 
 EXPOSE 4173
 
 CMD [ "serve", "-s", "dist" ]
 
-CMD [ "npm", "run", "preview", "--", "--host" ]
+#CMD [ "npm", "run", "preview", "--", "--host" ]
