@@ -1,9 +1,11 @@
-# STS Web – Frontend
+# Invio Sistema Tessera Sanitaria – Frontend
 
-Questo è il frontend di un’applicazione pensata per l’inserimento e la gestione delle fatture sanitarie da inviare al Sistema Tessera Sanitaria.  
-È stato realizzato in **React** con **Vite**, utilizzando **Material UI** per l’interfaccia.
+Questo è il frontend di un’applicazione pensata per l’inserimento e la gestione delle fatture emesse da professionisti sanitari da inviare al Sistema Tessera Sanitaria 
+per la detrazione delle spese fiscali.  
+È stato realizzato in **React**  **Vite**, utilizzando **Material UI** per l’interfaccia.
 
-L’app consente la registrazione (anche solo con uno username) e offre la possibilità di gestire ed eventualmente cancellare in autonomia l’account e tutti i dati associati.
+Come funzioni principali vi sono la possibilità inserire e modificare i dati utente e di fatture, ricerca dei dati inseriti, eliminazione e cancellazione l’account.
+Sono state inoltre implementate le pagine di Login/Registrazione/Recupero password.
 
 > ⚠️ Per il corretto funzionamento è necessario un backend (sviluppato separatamente in Java Spring Boot), che non è incluso in questo repository.
 
