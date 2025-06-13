@@ -4,5 +4,4 @@
 
 const proxy ="localhost";
 
-//const proxy= "api.inviosts.mattiabonfanti.it"
 export default proxy;
