@@ -4,7 +4,7 @@ Questo è il frontend di un’applicazione pensata per l’inserimento e la gest
 per la detrazione delle spese fiscali.  
 È stato realizzato in **React**  **Vite**, utilizzando **Material UI** per l’interfaccia.
 
-Come funzioni principali vi sono la possibilità inserire e modificare i dati utente e di fatture, ricerca dei dati inseriti, eliminazione e cancellazione l’account.
+Come funzioni principali vi sono la possibilità inserire e modificare i dati utente e di fatture, ricerca dei dati inseriti, eliminazione e cancellazione dell’account.
 Sono state inoltre implementate le pagine di Login/Registrazione/Recupero password.
 
 > ⚠️ Per il corretto funzionamento è necessario un backend (sviluppato separatamente in Java Spring Boot), che non è incluso in questo repository.
