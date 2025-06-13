@@ -1,8 +1,29 @@
-# React + Vite
+# STS Web – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Questo è il frontend di un’applicazione pensata per l’inserimento e la gestione delle fatture sanitarie da inviare al Sistema Tessera Sanitaria.  
+È stato realizzato in **React** con **Vite**, utilizzando **Material UI** per l’interfaccia.
 
-Currently, two official plugins are available:
+L’app consente la registrazione (anche solo con uno username) e offre la possibilità di gestire ed eventualmente cancellare in autonomia l’account e tutti i dati associati.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚠️ Per il corretto funzionamento è necessario un backend (sviluppato separatamente in Java Spring Boot), che non è incluso in questo repository.
+
+---
+
+## Tecnologie utilizzate
+
+- React + Vite
+- Material UI
+- Axios
+- React Router DOM
+- React Hook Form
+- Day.js, date-fns
+
+---
+
+## Avvio del progetto
+
+Per avviare il frontend in locale:
+
+```bash
+npm install
+npm run dev
