@@ -9,6 +9,14 @@ Sono state inoltre implementate le pagine di Login/Registrazione/Recupero passwo
 
 > ⚠️ Per il corretto funzionamento è necessario un backend (sviluppato separatamente in Java Spring Boot), che non è incluso in questo repository.
 
+
+## Backend di test (in arrivo)
+
+A breve sarà disponibile un backend separato dedicato ai test, con dati fittizi e senza invii a sistemi reali.  
+Questo permetterà di provare l’app in sicurezza, senza utilizzare dati personali o sensibili.
+
+Aggiornerò il repository non appena sarà pronto.
+
 ---
 
 ## Tecnologie utilizzate
