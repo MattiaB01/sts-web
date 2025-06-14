@@ -36,7 +36,7 @@ function Login() {
     try {
       setLoading(true);
       // Invia una richiesta POST al server con i dati del login
-      const response = await axios.post(`http://${proxy}:8080/login2`, {
+      const response = await axios.post(`${proxy}/login2`, {
         username,
         password
 

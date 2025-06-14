@@ -37,7 +37,7 @@ function ElencoFatture({ handleChange }) {
 
   const elencoFatture = async () => {
     setIsLoading(true)
-    const response = await axios.post(`http://${proxy}:8080/elencoFatture?username=${username}`)
+    const response = await axios.post(`${proxy}/elencoFatture?username=${username}`)
     setElenco(response.data.fatture)
     console.log(response.data.fatture)
     setIsLoading(false)
@@ -51,7 +51,7 @@ function ElencoFatture({ handleChange }) {
     }
     else {
     setIsLoading(true)
-    const response = await axios.post(`http://${proxy}:8080/elencoFattureData?username=${username}&start=${daData}&end=${aData}`)
+    const response = await axios.post(`${proxy}/elencoFattureData?username=${username}&start=${daData}&end=${aData}`)
     setElenco(response.data.fatture)
     console.log(response.data.fatture)
     setIsLoading(false)
@@ -81,7 +81,7 @@ function ElencoFatture({ handleChange }) {
     if (conferma){
     console.log(a)
     console.log(`Elimina utente con ID: ${id}`);
-    const response = await axios.post(`http://${proxy}:8080/eliminaFattura?id=${id}`)
+    const response = await axios.post(`${proxy}/eliminaFattura?id=${id}`)
     elencoFatture();
     }
   };

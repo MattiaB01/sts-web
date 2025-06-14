@@ -1,8 +1,8 @@
-//const proxy ="192.168.1.178";
+//const proxy ="http://192.168.1.178:8080";
 
-//const proxy ="192.168.1.183";
+//const proxy ="http://192.168.1.183:8080";
 
-const proxy ="localhost";
+const proxy ="http://localhost:8080";
 
-//const proxy= "api.inviosts.mattiabonfanti.it"
+
 export default proxy;

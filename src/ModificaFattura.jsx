@@ -130,7 +130,7 @@ const ModificaFattura = (id) => {
     setIsLoading(true)
     const response3 = await getProprietario();
 
-    const response = await axios.post(`http://${proxy}:8080/trovaFattura?id=${id.id} `)
+    const response = await axios.post(`${proxy}/trovaFattura?id=${id.id} `)
     // const response = await axios.post(`http://localhost:8080/trovaFattura?id=502`)
     const response2 = await getUtente(response.data.utente);
 
@@ -216,7 +216,7 @@ const ModificaFattura = (id) => {
     }
 
     try {
-      const response = await axios.post(`http://${proxy}:8080/invioFattura`, invio);
+      const response = await axios.post(`${proxy}/invioFattura`, invio);
       setEsito(response.data)
     }
     catch (e) {
@@ -270,7 +270,7 @@ const ModificaFattura = (id) => {
     }
 
     try {
-      const response = await axios.post(`http://${proxy}:8080/modificaFattura`, invio);
+      const response = await axios.post(`${proxy}/modificaFattura`, invio);
       setEsito(response.data)
     }
     catch (e) {

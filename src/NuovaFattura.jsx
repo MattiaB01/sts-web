@@ -110,7 +110,7 @@ const NuovaFattura = () => {
 
     ottieniProprietario();
 
-    axios.post(`http://${proxy}:8080/utenti?username=${username}`)
+    axios.post(`${proxy}/utenti?username=${username}`)
       .then(response => {
         setData(response.data)
         console.log("fatto")
@@ -142,7 +142,7 @@ const NuovaFattura = () => {
       )
     }
     try {
-      const response = await axios.post(`http://${proxy}:8080/invioFattura`, invio);
+      const response = await axios.post(`${proxy}/invioFattura`, invio);
       setEsito(response.data)
     }
     catch {
@@ -178,7 +178,7 @@ const NuovaFattura = () => {
       )
     }
     try {
-      const response = await axios.post(`http://${proxy}:8080/salvaFattura`, invio);
+      const response = await axios.post(`${proxy}/salvaFattura`, invio);
       if(response.data==="ok")
        {setEsito("Fattura salvata")}
       else 
@@ -202,7 +202,7 @@ const NuovaFattura = () => {
 
 
 
-    const response = await axios.post(`http://${proxy}:8080/utenti?username=${username}`);
+    const response = await axios.post(`${proxy}/utenti?username=${username}`);
 
     setUsers(response.data)
     users.map((user) => {

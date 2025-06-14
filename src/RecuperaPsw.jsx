@@ -24,7 +24,7 @@ function Recupera() {
         //const responsew = await axios.post(`http://${proxy}:8080/email2&username=${username}`);
         const response = await // Send a POST request
 
-          axios.post(`http://${proxy}:8080/email2`, null, {
+          axios.post(`${proxy}/email2`, null, {
             params: {
               username: username,
             }
@@ -51,7 +51,7 @@ function Recupera() {
 
     try {
       // Invia una richiesta POST al server con i dati del login
-      const response= await axios.post(`http://${proxy}:8080/recovery2`, null, {
+      const response= await axios.post(`${proxy}/recovery2`, null, {
         params: {
           username: username,
           uuid:codice,

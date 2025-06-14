@@ -72,7 +72,7 @@ function Registrazione() {
 
       try {
         // Invia una richiesta POST al server con i dati del login
-        const response = await axios.post(`http://${proxy}:8080/signup2`, {
+        const response = await axios.post(`${proxy}/signup2`, {
           username,
           password,
           email

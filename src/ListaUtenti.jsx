@@ -32,7 +32,7 @@ function ListaUtenti  ({handleChange}) {
     confirm ("Confermi l'eliminazione dell'utente selezionato?")
     if( conferm) {
     console.log(`Elimina utente con ID: ${id}`);
-    const response = await axios.post(`http://${proxy}:8080/eliminaUtente?id=${id}`);
+    const response = await axios.post(`${proxy}/eliminaUtente?id=${id}`);
     lista();
     }
   };
@@ -43,7 +43,7 @@ useEffect(()=>{
   },[]);
 
   const lista = async () =>{
-    const response = await axios.post(`http://${proxy}:8080/utenti?username=${username}`);
+    const response = await axios.post(`${proxy}/utenti?username=${username}`);
     console.log(response.data);
     const elenco = response.data;
     

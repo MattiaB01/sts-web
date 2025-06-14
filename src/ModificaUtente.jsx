@@ -57,7 +57,7 @@ const ModificaUtente = (props) => {
   
 
   const utente = async()=> {
-    const response = await axios.post(`http://${proxy}:8080/trovautente?id=${id}`)
+    const response = await axios.post(`${proxy}/trovautente?id=${id}`)
   
     console.log(response.data);
     setFormData(response.data);
@@ -89,7 +89,7 @@ const ModificaUtente = (props) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     if (validate()) {
-      const response = await axios.post(`http://${proxy}:8080/salvaUtente`,{
+      const response = await axios.post(`${proxy}/salvaUtente`,{
         "id":id,
         "username":username,
         "nome":formData.nome,
@@ -185,7 +185,7 @@ const ModificaUtente = (props) => {
           />
 
         </Grid2> <Grid2 item xs={12} >
-          <Button style={{ margin: 30 }} type="submit" variant="contained" color="success">
+          <Button style={{ margin: 30 }} type="submit" variant="contained" color="primary">
             Salva
           </Button>
           <Button style={{ margin: 10 }} type="reset" variant="contained" color="primary">

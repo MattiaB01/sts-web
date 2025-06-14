@@ -71,7 +71,7 @@ const NuovoUtente = () => {
     if (validate()) {
       console.log("Dati inviati:", formData);
 
-      const response = await axios.post(`http://${proxy}:8080/salvaUtente`,{
+      const response = await axios.post(`${proxy}/salvaUtente`,{
           "username":username,
           "nome":formData.nome,
           "cognome":formData.cognome,

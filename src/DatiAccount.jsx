@@ -106,7 +106,7 @@ const DatiAccount = () => {
     setOpen(false)
     if (true) {
       try {
-        const response = await axios.post(`http://${proxy}:8080/deleteAccount?username=${username}`
+        const response = await axios.post(`${proxy}/deleteAccount?username=${username}`
 
         );
         localStorage.removeItem('authToken');

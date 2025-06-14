@@ -59,7 +59,7 @@ const DatiProprietario = () => {
   const recuperaProprietario = async () =>{
   
      try{
-      const response = await axios.post(`http://${proxy}:8080/proprietario?username=${username}`
+      const response = await axios.post(`${proxy}/proprietario?username=${username}`
      );
      console.log(response.data);
      console.log(response.data.username);
@@ -83,7 +83,7 @@ const DatiProprietario = () => {
 
       console.log(username);
       console.log("Dati inviati:", formData);
-      const response = await axios.post(`http://${proxy}:8080/salvaProprietario`,{
+      const response = await axios.post(`${proxy}/salvaProprietario`,{
         "user2":{
             "username":username,
         },
