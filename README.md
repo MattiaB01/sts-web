@@ -37,3 +37,17 @@ Per avviare il frontend in locale:
 ```bash
 npm install
 npm run dev
+```
+
+## Test con dati fittizi
+
+Per testare il funzionamento dell'app in ambiente di prova (senza inviare dati reali), è possibile utilizzare le seguenti credenziali:
+
+- **Codice Fiscale**: QUIQQU98A01H501H  
+- **Password**: Salve123
+- **PIN Code**: 3167676525
+- **Partita IVA**: 65432109876
+
+Questi dati sono validi solo per l’ambiente di test. 
+L’invio effettuato da questi dati non ha alcuna validità fiscale.
+
